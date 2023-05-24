@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+        <script src="https://unpkg.com/@descope/web-component@latest/dist/index.js"></script>
+    
+</head>
+<body>
+    <!-- The code below includes your Project ID (P2QBhbIPlFDnuVF1MbrDjoMXKL5I) -->
+<descope-wc
+project-id="P2QBhbIPlFDnuVF1MbrDjoMXKL5I"
+flow-id="sign-up-or-in"
+theme="light"
+/>
+
+<script>
+const wcElement = document.getElementsByTagName('descope-wc')[0];
+
+const onSuccess = (e) => {
+        console.log(e.detail.user.name)
+        console.log(e.detail.user.email)
+};
+const onError = (err) => console.log(err);
+
+wcElement.addEventListener('success', onSuccess);
+wcElement.addEventListener('error', onError);
+</script>
+</body>
+</html>
